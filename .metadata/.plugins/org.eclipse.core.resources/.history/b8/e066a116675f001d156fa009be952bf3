@@ -1,0 +1,59 @@
+package enoca.enoca.webApi.controllers;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+
+import enoca.enoca.business.abstracts.LanguageService;
+import enoca.enoca.business.requests.languages.CreateLanguageRequest;
+import enoca.enoca.business.requests.languages.UpdateLanguageRequest;
+import enoca.enoca.business.response.languages.GetAllLanguagesResponse;
+import enoca.enoca.business.response.languages.GetLanguageByIdResponse;
+import enoca.enoca.entities.concretes.Language;
+
+@RestController
+@RequestMapping("/api/v1/languages")
+public class LanguagesController {
+
+	private LanguageService languageService;
+
+	public LanguagesController(LanguageService languageService) {
+		this.languageService = languageService;
+	}
+
+	@GetMapping("/getAllLanguages")
+	public List<GetAllLanguagesResponse> getAll() {
+		return languageService.getAll();
+	}
+
+	@GetMapping(name="getLanguagesById" , path="/{id}")
+	public Language getById(@PathVariable int id) {
+		return languageService.getById(id);
+	}
+
+	@PostMapping("/createLanguages")
+	@ResponseStatus(code = org.springframework.http.HttpStatus.CREATED)
+	public CreateLanguageRequest create(@RequestBody CreateLanguageRequest language) {
+		return languageService.create(language);
+	}
+
+	@PutMapping(name="updateLanguages", path="/{id}")
+	public UpdateLanguageRequest update(@RequestBody UpdateLanguageRequest language, @PathVariable int id) {
+		return languageService.update(language, id);
+	}
+
+	@DeleteMapping(name="deleteLanguages", path="/{id}")
+	@ResponseStatus(code = org.springframework.http.HttpStatus.NO_CONTENT)
+	public void delete(@PathVariable int id) {
+		languageService.delete(id);
+	}
+
+}

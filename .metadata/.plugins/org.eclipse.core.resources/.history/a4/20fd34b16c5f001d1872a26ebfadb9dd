@@ -1,0 +1,26 @@
+package enoca.enoca.mapper;
+
+import java.util.List;
+
+import org.mapstruct.Mapper;
+import org.mapstruct.MappingTarget;
+import org.springframework.stereotype.Repository;
+
+import enoca.enoca.business.requests.languages.CreateLanguageRequest;
+import enoca.enoca.business.requests.languages.UpdateLanguageRequest;
+import enoca.enoca.business.response.languages.GetAllLanguagesResponse;
+import enoca.enoca.business.response.languages.GetLanguageByIdResponse;
+import enoca.enoca.entities.concretes.Language;
+
+@Mapper(componentModel = "spring")
+public interface LanguageMapper {
+
+	List<GetAllLanguagesResponse> toLanguages(List<Language> languages);
+
+	GetLanguageByIdResponse toLanguage(Language language);
+
+	Language toCreateLanguageRequest(CreateLanguageRequest request);
+
+	void update(@MappingTarget Language language, UpdateLanguageRequest request);
+
+}

@@ -1,0 +1,23 @@
+package enoca.enoca.business.abstracts;
+
+import java.util.List;
+
+import enoca.enoca.business.requests.languages.CreateLanguageRequest;
+import enoca.enoca.business.requests.languages.UpdateLanguageRequest;
+import enoca.enoca.business.response.languages.GetAllLanguagesResponse;
+import enoca.enoca.business.response.languages.GetLanguageByIdResponse;
+import enoca.enoca.entities.concretes.Language;
+
+public interface LanguageService {
+
+	List<GetAllLanguagesResponse> getAll();
+
+	GetLanguageByIdResponse getById(int id);
+
+	CreateLanguageRequest create(CreateLanguageRequest request);
+
+	UpdateLanguageRequest update(UpdateLanguageRequest request, int id);
+
+	void delete(int id);
+
+}

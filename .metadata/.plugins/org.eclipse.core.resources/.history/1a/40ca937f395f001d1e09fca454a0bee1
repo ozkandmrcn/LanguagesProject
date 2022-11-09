@@ -1,0 +1,5 @@
+package enoca.enoca.entities.concretes;
+
+public class Technology {
+
+}

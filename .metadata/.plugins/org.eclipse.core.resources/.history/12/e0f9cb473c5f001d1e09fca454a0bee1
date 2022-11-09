@@ -1,0 +1,5 @@
+package enoca.enoca.business.response.languages;
+
+public class GetAllLanguagesResponse {
+
+}

@@ -1,0 +1,17 @@
+package enoca.enoca.mapper;
+
+import org.mapstruct.Mapper;
+import org.springframework.stereotype.Repository;
+
+@Repository
+@Mapper(componentModel = "spring")
+public interface TechnologyMapper {
+
+	List<GetAllTechnologiesResponse> toTechnologies(List<Technology> technologies);
+
+	GetTechnologyByIdResponse toTechnology(Technology technology);
+
+	Technology toCreateTechnologyRequest(CreateTechnologyRequest request);
+
+	void update(@MappingTarget Technology technology, UpdateTechnologyRequest request);
+}

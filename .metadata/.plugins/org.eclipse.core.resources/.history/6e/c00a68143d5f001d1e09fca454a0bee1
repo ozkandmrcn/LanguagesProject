@@ -1,0 +1,17 @@
+package enoca.enoca.business.abstracts;
+
+import java.util.List;
+
+public interface LanguageService {
+
+	List<GetAllLanguagesResponse> getAll();
+
+	GetLanguageByIdResponse getById(int id);
+
+	CreateLanguageRequest create(CreateLanguageRequest request);
+
+	UpdateLanguageRequest update(UpdateLanguageRequest request, int id);
+
+	void delete(int id);
+
+}

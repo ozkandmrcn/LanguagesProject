@@ -1,0 +1,21 @@
+package enoca.enoca.business.abstracts;
+
+import java.util.List;
+
+import enoca.enoca.business.requests.technologies.CreateTechnologyRequest;
+import enoca.enoca.business.requests.technologies.UpdateTechnologyRequest;
+import enoca.enoca.business.response.technologies.GetAllTechnologiesResponse;
+
+public interface TechnologyService {
+
+	List<GetAllTechnologiesResponse> getAll();
+
+	GetTechnologyByIdResponse getById(int id);
+
+	CreateTechnologyRequest create(CreateTechnologyRequest request);
+
+	UpdateTechnologyRequest update(UpdateTechnologyRequest request, int id);
+
+	void delete(int id);
+
+}

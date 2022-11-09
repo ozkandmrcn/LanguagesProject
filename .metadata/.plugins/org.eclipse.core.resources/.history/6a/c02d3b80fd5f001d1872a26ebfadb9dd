@@ -1,0 +1,26 @@
+package enoca.enoca.mapper;
+
+import java.util.List;
+
+import org.mapstruct.Mapper;
+import org.mapstruct.MappingTarget;
+import org.springframework.stereotype.Repository;
+
+import enoca.enoca.business.requests.technologies.CreateTechnologyRequest;
+import enoca.enoca.business.requests.technologies.UpdateTechnologyRequest;
+import enoca.enoca.business.response.technologies.GetAllTechnologiesResponse;
+import enoca.enoca.business.response.technologies.GetTechnologyByIdResponse;
+import enoca.enoca.entities.concretes.Technology;
+
+@Repository
+@Mapper(componentModel = "spring")
+public interface TechnologyMapper {
+
+	List<GetAllTechnologiesResponse> toTechnologies(List<Technology> technologies);
+
+	GetTechnologyByIdResponse toTechnology(Technology technology);
+
+	Technology toCreateTechnologyRequest(CreateTechnologyRequest request);
+
+	void update(@MappingTarget Technology technology, UpdateTechnologyRequest request);
+}

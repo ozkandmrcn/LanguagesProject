@@ -1,0 +1,5 @@
+package enoca.enoca.business.response.technologies;
+
+public class GetTechnologyByIdResponse {
+
+}

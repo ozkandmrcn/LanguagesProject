@@ -1,0 +1,22 @@
+package enoca.enoca.entities.concretes;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "rentals", "carMaintenances", "damageRecords"})
+@Table(name = "cars")
+public class Car {
+	
+	
+
+}

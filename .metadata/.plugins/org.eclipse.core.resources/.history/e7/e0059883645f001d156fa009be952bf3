@@ -1,0 +1,20 @@
+package enoca.enoca.business.response.languages;
+
+import java.util.List;
+
+import enoca.enoca.business.response.technologies.GetAllTechnologiesResponse;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class GetAllLanguagesResponse {
+	
+	private String name;
+	
+	private List<GetAllTechnologiesResponse> technologies;
+	
+	
+}

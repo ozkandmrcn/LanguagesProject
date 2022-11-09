@@ -1,0 +1,12 @@
+package enoca.enoca.mappers;
+
+import javax.persistence.MappedSuperclass;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+@Mapper(componentModel = "spring")
+@Mappe
+public interface LanguageMapper {
+
+}

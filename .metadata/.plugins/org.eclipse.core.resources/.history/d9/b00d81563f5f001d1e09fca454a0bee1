@@ -1,0 +1,5 @@
+package enoca.enoca.business.concretes;
+
+public class LanguageManager {
+
+}

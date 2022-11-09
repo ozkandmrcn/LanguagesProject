@@ -1,0 +1,5 @@
+package enoca.enoca.business.requests.languages;
+
+public class UpdateLanguageRequest {
+
+}
